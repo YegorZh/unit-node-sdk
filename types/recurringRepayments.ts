@@ -1,4 +1,4 @@
-import { BaseCreateAchRepaymentRequest, BaseCreateBookRepaymentRequest, BaseCreateCapitalPartnerAchRepaymentRequest } from "./baseRepaymentTypes"
+import { BaseCreateAchRepaymentRequest, BaseCreateBookRepaymentRequest, BaseCreateCapitalPartnerAchRepaymentRequest, BaseCreateCapitalPartnerBookRepaymentRequest } from "./baseRepaymentTypes"
 import { Relationship, Schedule, Tags } from "./common"
 
 
@@ -11,16 +11,16 @@ export type CreateRecurringBookRepaymentRequest = BaseCreateBookRepaymentRequest
 }
 
 export type CreateRecurringCapitalPartnerAchRepaymentRequest = BaseCreateCapitalPartnerAchRepaymentRequest & {
-    type: "recurringAchRepayment"
+    type: "recurringCapitalPartnerAchRepayment"
 }
 
-export type CreateRecurringCapitalPartnerBookRepaymentRequest = BaseCreateBookRepaymentRequest & {
-    type: "recurringBookRepayment"
+export type CreateRecurringCapitalPartnerBookRepaymentRequest = BaseCreateCapitalPartnerBookRepaymentRequest & {
+    type: "recurringCapitalPartnerBookRepayment"
 }
 
 export type CreateRecurringRepaymentRequest = CreateRecurringAchRepaymentRequest | CreateRecurringBookRepaymentRequest | CreateRecurringCapitalPartnerAchRepaymentRequest | CreateRecurringCapitalPartnerBookRepaymentRequest
 
-export type RecurringRepaymentStatus = "active" | "disabled"
+export type RecurringRepaymentStatus = "Active" | "Disabled"
 
 type BaseRecurringRelationships = {
     /**
@@ -133,12 +133,12 @@ export type RecurringBookRepayment = BaseRecurringBookRepayment & {
 }
 
 export type RecurringCapitalPartnerAchRepayment = BaseRecurringAchRepayment & {
-    type: "recurringAchRepayment"
+    type: "recurringCaptialPartnerAchRepayment"
     relationships: BaseRecurringRelationships
 }
 
 export type RecurringCapitalPartnerBookRepayment = BaseRecurringBookRepayment & {
-    type: "recurringBookRepayment"
+    type: "recurringCapitalPartnerBookRepayment"
     relationships: BaseRecurringRelationships
 }
 

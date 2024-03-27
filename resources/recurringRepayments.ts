@@ -2,7 +2,7 @@ import { BaseListParams, Meta, Sort, UnitConfig, UnitResponse } from "../types"
 import { CreateRecurringRepaymentRequest, RecurringRepayment, RecurringRepaymentStatus } from "../types/recurringRepayments"
 import { BaseResource } from "./baseResource"
 
-export class RecurringPayments extends BaseResource {
+export class RecurringRepayments extends BaseResource {
     constructor(token: string, basePath: string, config?: UnitConfig) {
         super(token, basePath + "/recurring-repayments", config)
     }
