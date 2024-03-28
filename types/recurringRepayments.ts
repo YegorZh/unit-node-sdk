@@ -133,7 +133,7 @@ export type RecurringBookRepayment = BaseRecurringBookRepayment & {
 }
 
 export type RecurringCapitalPartnerAchRepayment = BaseRecurringAchRepayment & {
-    type: "recurringCaptialPartnerAchRepayment"
+    type: "recurringCapitalPartnerAchRepayment"
     relationships: BaseRecurringRelationships
 }
 

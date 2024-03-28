@@ -39,7 +39,7 @@ describe("Create RecurringAchRepayment", () => {
 
         const res = await unit.recurringRepayments.create(req)
         expect(res.data.type === "recurringAchRepayment").toBeTruthy()
-    })
+    }, 180000)
 })
 
 describe("Create RecurringBookRepayment", () => {
@@ -60,7 +60,7 @@ describe("Create RecurringBookRepayment", () => {
                 "counterpartyAccount": {
                     "data": {
                         "type": "depositAccount",
-                        "id": data.plaidCounterpartyId
+                        "id": data.anotherDepositAccountId
                     }
                 },
                 creditAccount: {
@@ -74,11 +74,11 @@ describe("Create RecurringBookRepayment", () => {
 
         const res = await unit.recurringRepayments.create(req)
         expect(res.data.type === "recurringBookRepayment").toBeTruthy()
-    })
+    }, 180000)
 })
 
 describe("Create CapitalPartnerRecurringAchRepayment", () => {
-    test("create recurringachaepayment", async () => {
+    test("create recurringacharepayment", async () => {
         const data = await initRepaymentRelatedRelationships(unit)
         const req: CreateRecurringCapitalPartnerAchRepaymentRequest = {
             "type": "recurringCapitalPartnerAchRepayment",
@@ -103,8 +103,8 @@ describe("Create CapitalPartnerRecurringAchRepayment", () => {
     }
 
         const res = await unit.recurringRepayments.create(req)
-        expect(res.data.type === "recurringCaptialPartnerAchRepayment").toBeTruthy()
-    })
+        expect(res.data.type === "recurringCapitalPartnerAchRepayment").toBeTruthy()
+    }, 180000)
 })
 
 describe("Create CapitalPartnerRecurringBookRepayment", () => {
@@ -120,7 +120,7 @@ describe("Create CapitalPartnerRecurringBookRepayment", () => {
                 "counterpartyAccount": {
                     "data": {
                         "type": "depositAccount",
-                        "id": data.plaidCounterpartyId
+                        "id": data.anotherDepositAccountId
                     }
                 },
                 creditAccount: {
@@ -134,7 +134,7 @@ describe("Create CapitalPartnerRecurringBookRepayment", () => {
 
         const res = await unit.recurringRepayments.create(req)
         expect(res.data.type === "recurringCapitalPartnerBookRepayment").toBeTruthy()
-    })
+    }, 180000)
 })
 
 describe("Repayments List", () => {
