@@ -227,9 +227,11 @@ describe("ApplicationForms", () => {
                     country: "US"
                   }
                 }
-              ]
+              ],
+              businessVertical: "TechnologyMediaOrTelecom",
+              yearOfIncorporation: "2014"
             },
-            requestedProducts: ["Banking", "BillPay"]
+            requestedProducts: ["Banking"]
         },
         relationships: {}
       }
@@ -356,7 +358,9 @@ describe("ApplicationForms", () => {
                     country: "US"
                   }
                 }
-              ]
+              ],
+              businessVertical: "TechnologyMediaOrTelecom",
+              yearOfIncorporation: "2014"
             },
             requestedProducts: ["Banking", "BillPay", "Capital"]
         },
